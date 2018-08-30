@@ -1,0 +1,117 @@
+import { Head } from 'mdx-deck'
+
+export { default as theme } from '../theme'
+
+<Head>
+  <title>Presentation Title</title>
+</Head>
+
+# Introduction to React
+
+---
+
+## the react way
+
+* Abstraction for the DOM
+  * Keep it that way.
+  * Will discuss how and when to step into DOM in advanced talk.
+* “Everything is a component”
+* Many small components. Single responsibility.
+* Composition is key
+
+---
+
+## jsx
+
+* jsx is not html (few minor differences: className, htmlFor, etc)
+* don't underestimate nice looking, simple JSX.
+* a bit about props
+
+---
+
+## Components and Render functions
+
+* As before, “Everything is a component”
+* Don’t be afraid to create many small components to increase legibility, maintainability, and separation of concerns
+* make more components to get nice JSX. seriously. Do it.
+  * Non-exported render-only functions are A-OK
+    * (though I often like to put them in their own file if there’s more than a few)
+* PropTypes
+  * Create a contract for the data into your component. Be as specific as possible (ie: don’t use PropTypes.object or PropTypes.any unless that is the best you can do)
+  * Usually just need simple: string, number, etc
+  * Can (and should) go deeper with shape
+  * Can (and often should) get complex with arrayOf, objectOf
+* Show examples with single component vs multiple
+  * Navigation List with classNames on nav, ul, li, a
+    * Break out li, a
+    * Break out nav, ul also, for semantics even though not re-used
+    * Now you have a navigation component library that can be shared!
+
+---
+
+## DDAU. no two-way binding
+
+* Provide props and update functions. Call update functions from event handlers
+* Mention function binding caching issues
+* Simple pagination example?
+
+---
+
+## Forms
+
+* Controlled vs Uncontrolled
+  * Controlled is usually correct
+* Contact form example, using DDAU (name, email, message and onChange)
+
+---
+
+## how rendering works
+
+* render function re-run
+  * When props change. Is there anything to say here?
+* react handles diffing + dom updates
+  * Is there anything to say here, other than that it happens?
+* Lifecycle
+  * Make/find a diagram
+  * (hide advanced like getDerivedStateFromProps an getSnapshotBeforeUpdate()?)
+  * Mount:
+    * constructor()
+    * static getDerivedStateFromProps()
+    * render()
+    * componentDidMount()
+  * Update
+    * static getDerivedStateFromProps()
+    * shouldComponentUpdate()
+    * render()
+    * getSnapshotBeforeUpdate()
+    * componentDidUpdate()
+  * Unmount
+    * componentWillUnmount()
+
+---
+
+## setState (don't mutate)
+
+* State is inevitable
+* Several popular solutions (future talks), but also a native solution: setState
+  * Even when using others, I still use setState for simple view state, like panel visibility and current form state
+* Simple panel visibility example
+* Contact example from earlier, but with state
+  * External state
+  * Internal state: change onChange to onSubmit
+    * is now uncontrolled
+    * Can use key prop to reset
+
+---
+
+## create-react-app
+
+* the de-facto starter for the react community (there are others, but most use this)
+* npx create-react-app my-app
+  * screenshot with mention of upcoming workshop
+* react-scripts
+* the starter page
+* the goodies (code-splitting, service workers, PWAs, deployment, etc...)
+  * Probably not much detail here. List and where to find in docs?
+* Ejecting
+  * When to eject and when to not eject?
