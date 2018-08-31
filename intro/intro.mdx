@@ -1,4 +1,9 @@
-import { Head } from 'mdx-deck'
+import { Head, Notes, Appear } from 'mdx-deck'
+import { Split as SplitLeft, SplitRight } from 'mdx-deck/layouts'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem } = components;
 
 export { default as theme } from '../theme'
 
@@ -21,11 +26,63 @@ export { default as theme } from '../theme'
 
 ---
 
-## jsx
+## JSX is like a healthy vegetable that tastes like decadent chocolate cake. You feel guilty, but it’s good for you.
 
-* jsx is not html (few minor differences: className, htmlFor, etc)
-* don't underestimate nice looking, simple JSX.
-* a bit about props
+---
+
+## JSX
+
+<List>
+  <Appear>
+    <ListItem>JSX is not HTML</ListItem>
+    <ListItem>Don't underestimate nice looking, simple JSX</ListItem>
+    <ListItem>a bit about props</ListItem>
+  </Appear>
+</List>
+
+<Notes>
+  few minor differences:
+  <ul>
+    <li>className</li>
+    <li>htmlFor</li>
+    <li>event listeners are cheap</li>
+  </ul>
+</Notes>
+
+---
+
+<CodeSurfer
+  title="Simple JSX"
+  notes=""
+  code={require("!raw-loader!./simple.js")}
+  lang="jsx"
+  dark={true}
+/>
+
+---
+
+<CodeSurfer
+  title="Simple JSX - Transpiled"
+  notes=""
+  code={require("!raw-loader!./simple-transpiled.js")}
+  lang="js"
+  dark={true}
+/>
+
+---
+
+<CodeSurfer
+  title="JSX"
+  notes=""
+  code={require("!raw-loader!./advanced.js")}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { lines: [ 4 ], notes: "Event handlers and Inline functions" },
+    { lines: [ 5 ], notes: "Outputting values (with defaults)" },
+    { range: [ 8, 10 ], notes: "Rendering lists" },
+  ]}
+/>
 
 ---
 
@@ -71,8 +128,13 @@ export { default as theme } from '../theme'
   * When props change. Is there anything to say here?
 * react handles diffing + dom updates
   * Is there anything to say here, other than that it happens?
+
+---
+export default SplitLeft
+
+![](react-lifecycle.png)
+
 * Lifecycle
-  * Make/find a diagram
   * (hide advanced like getDerivedStateFromProps an getSnapshotBeforeUpdate()?)
   * Mount:
     * constructor()
