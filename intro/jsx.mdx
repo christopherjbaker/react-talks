@@ -1,0 +1,63 @@
+import { Notes, Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem } = components
+
+## JSX is like a healthy vegetable that tastes like decadent chocolate cake. You feel guilty, but it’s good for you.
+
+---
+
+## JSX
+
+<List>
+  <Appear>
+    <ListItem>JSX is not HTML</ListItem>
+    <ListItem>Don't underestimate nice looking, simple JSX</ListItem>
+    <ListItem>a bit about props</ListItem>
+  </Appear>
+</List>
+
+<Notes>
+  few minor differences:
+  <ul>
+    <li>className</li>
+    <li>htmlFor</li>
+    <li>event listeners are cheap</li>
+  </ul>
+</Notes>
+
+---
+
+<CodeSurfer
+  title="Simple JSX"
+  notes=""
+  code={require("!raw-loader!./assets/simple.js")}
+  lang="jsx"
+  dark={true}
+/>
+
+---
+
+<CodeSurfer
+  title="Simple JSX - Transpiled"
+  notes=""
+  code={require("!raw-loader!./assets/simple-transpiled.js")}
+  lang="js"
+  dark={true}
+/>
+
+---
+
+<CodeSurfer
+  title="JSX"
+  notes=""
+  code={require("!raw-loader!./assets/advanced.js")}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { lines: [ 4 ], notes: "Event handlers and Inline functions" },
+    { lines: [ 5 ], notes: "Outputting values (with defaults)" },
+    { range: [ 8, 10 ], notes: "Rendering lists" },
+  ]}
+/>

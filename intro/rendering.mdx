@@ -1,0 +1,27 @@
+## how rendering works
+
+* render function re-run
+  * When props change. Is there anything to say here?
+* react handles diffing + dom updates
+  * Is there anything to say here, other than that it happens?
+
+---
+<!-- export { Split as default } from 'mdx-deck/layouts' -->
+
+![](react-lifecycle.png)
+
+* Lifecycle
+  * (hide advanced like getDerivedStateFromProps an getSnapshotBeforeUpdate()?)
+  * Mount:
+    * constructor()
+    * static getDerivedStateFromProps()
+    * render()
+    * componentDidMount()
+  * Update
+    * static getDerivedStateFromProps()
+    * shouldComponentUpdate()
+    * render()
+    * getSnapshotBeforeUpdate()
+    * componentDidUpdate()
+  * Unmount
+    * componentWillUnmount()

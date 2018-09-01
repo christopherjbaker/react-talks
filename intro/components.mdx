@@ -1,0 +1,17 @@
+## Components and Render functions
+
+* As before, “Everything is a component”
+* Don’t be afraid to create many small components to increase legibility, maintainability, and separation of concerns
+* make more components to get nice JSX. seriously. Do it.
+  * Non-exported render-only functions are A-OK
+    * (though I often like to put them in their own file if there’s more than a few)
+* PropTypes
+  * Create a contract for the data into your component. Be as specific as possible (ie: don’t use PropTypes.object or PropTypes.any unless that is the best you can do)
+  * Usually just need simple: string, number, etc
+  * Can (and should) go deeper with shape
+  * Can (and often should) get complex with arrayOf, objectOf
+* Show examples with single component vs multiple
+  * Navigation List with classNames on nav, ul, li, a
+    * Break out li, a
+    * Break out nav, ul also, for semantics even though not re-used
+    * Now you have a navigation component library that can be shared!

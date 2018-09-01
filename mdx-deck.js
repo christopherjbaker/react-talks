@@ -1,3 +1,4 @@
+const exists = require('fs').existsSync;
 const spawn = require('child_process').spawn;
 
 const command = process.argv[2];
@@ -11,7 +12,15 @@ if (!deck) {
 	throw new Error('You must provide a deck.');
 }
 
-const file = `${deck}/${deck}.mdx`;
+const file = [
+	`${deck}/${deck}.js`,
+	`${deck}/${deck}.mdx`,
+].find(file => exists(file));
+
+if (!file) {
+	throw new Error('The provided deck does not conform to the expected format: {deck}/{deck}.(js|mdx)');
+}
+
 const directory = `dist/${deck}`;
 
 let args = [];
