@@ -1,1 +1,21 @@
-## Style Prop
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+## Inline Styles
+
+What everybody thinks we mean when we say "css-in-js".
+
+---
+
+<CodeSurfer
+  title="Inline Styles"
+  notes=""
+  code={require("!raw-loader!./assets/style.js")}
+  lang="jsx"
+  dark={true}
+/>
+
+```notes
+In React, inline styles are not specified as a string. Instead they are specified with an object whose key is the camelCased version of the style name, and whose value is the style's value, usually a string.
+
+Style keys are camelCased in order to be consistent with accessing the properties on DOM nodes from JS (e.g. node.style.backgroundImage).
+```

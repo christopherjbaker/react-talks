@@ -1,1 +1,66 @@
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
 ## Styled Components
+
+<Appear>
+The React Way: "Everything is a component."
+</Appear>
+
+---
+
+<CodeSurfer
+  title="Styled Components"
+  notes=""
+  code={require("!raw-loader!./assets/components.js")}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { lines: [ 3, 4 ], notes: "create a button element with just css" },
+    { lines: [ 5 ], notes: "dynamic css values based on props" },
+    { range: [ 7, 10 ], notes: "conditional css blocks" },
+    { range: [ 1, 21 ], notes: "" },
+    { lines: [ 16 ], notes: "just use the component" },
+    { lines: [ 17 ], notes: "change the color" },
+    { lines: [ 18 ], notes: "add an outline" },
+    { range: [ 13, 21 ], notes: "" },
+  ]}
+/>
+
+
+```notes
+styled-components utilizes tagged template literals to style your components.
+
+It removes the mapping between components and styles. This means that when you're defining your styles, you're actually creating a normal React component, that has your styles attached to it.
+```
+
+---
+
+<CodeSurfer
+  title="More Styled Components"
+  notes=""
+  code={require("!raw-loader!./assets/components-advanced.js")}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 4, 5 ], notes: "still just css" },
+    { range: [ 7, 9 ], notes: "nesting elements" },
+    { range: [ 11, 13 ], notes: "nesting other styled components" },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Styled Components with themes"
+  notes=""
+  code={require("!raw-loader!./assets/components-theme.js")}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 3, 11 ], notes: "the same button, but with global theme" },
+    { range: [ 19, 20 ], notes: "same button usage as before" },
+    { range: [ 15, 18 ], notes: "theme can be provided at any ancestor" },
+    { range: [ 1, 23 ], notes: "" },
+  ]}
+/>
