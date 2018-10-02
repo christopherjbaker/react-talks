@@ -1,5 +1,53 @@
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
 ## Forms
 
-* Controlled vs Uncontrolled
-  * Controlled is usually correct
-* Contact form example, using DDAU (name, email, message and onChange)
+In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
+
+---
+
+<CodeSurfer
+  title="Form Components"
+  notes=""
+  code={require("!raw-loader!./assets/form.js")}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 18, 22 ], notes: "Uncontrolled: 'input' with 'defaultValue' and 'ref'" },
+    { lines: [ 2, 6 ], notes: "Uncontrolled: Save element, and use it later to get value" },
+    { range: [ 26, 30 ], notes: "Controlled: 'input' with 'value' and 'onChange'" },
+    { lines: [ 12 ], notes: "Controlled: store values and pass back as prop" },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Controlled Contact Component"
+  notes=""
+  code={require("!raw-loader!./assets/contact-controlled.js")}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 21, 32 ], notes: "Controlled form elements" },
+    { range: [ 2, 5 ], notes: "Passes changed information back out" },
+    { range: [ 7, 14 ], notes: "Passes final information back out" },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Uncontrolled Contact Component"
+  notes=""
+  code={require("!raw-loader!./assets/contact-uncontrolled.js")}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { lines: [ 1 ], notes: "Uncontrolled contact form from `setState`" },
+    { range: [ 39, 50 ], notes: "Controlled form elements" },
+    { lines: [ 35 ], notes: "Unlike controlled, this information comes from state" },
+    { range: [ 20, 23 ], notes: "Stores changed information in state" },
+    { range: [ 25, 32 ], notes: "Passes final information back out" },
+  ]}
+/>

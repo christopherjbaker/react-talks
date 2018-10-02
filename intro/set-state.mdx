@@ -1,11 +1,33 @@
-## setState (don't mutate)
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
 
-* State is inevitable
-* Several popular solutions (future talks), but also a native solution: setState
-  * Even when using others, I still use setState for simple view state, like panel visibility and current form state
-* Simple panel visibility example
-* Contact example from earlier, but with state
-  * External state
-  * Internal state: change onChange to onSubmit
-    * is now uncontrolled
-    * Can use key prop to reset
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem, inlineCode: InlineCode } = components
+
+## State Management
+
+<List>
+  <Appear>
+    <ListItem>State is inevitable</ListItem>
+    <ListItem>Native solution: <InlineCode>setState</InlineCode></ListItem>
+    <ListItem>3rd-party solutions: Redux, MobX, Ylem</ListItem>
+    <ListItem>can still use <InlineCode>setState</InlineCode> for simple view state</ListItem>
+  </Appear>
+</List>
+
+---
+
+<CodeSurfer
+  title="Uncontrolled Contact Form"
+  notes=""
+  code={require("!raw-loader!./assets/contact-uncontrolled.js")}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 2, 6 ], notes: "Initial state" },
+    { range: [ 9, 17 ], notes: "Optional. Allow user to set initial state." },
+    { range: [ 20, 23 ], notes: "Call `setState` with new values. Do not mutate." },
+    { lines: [ 35 ], notes: "Use `this.state` much like you do `this.props`." },
+    { range: [ 25, 32 ], notes: "Sometimes both." },
+  ]}
+/>

@@ -1,11 +1,49 @@
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem, a: Link, inlineCode: InlineCode } = components
+
 ## create-react-app
 
-* the de-facto starter for the react community (there are others, but most use this)
-* npx create-react-app my-app
-  * screenshot with mention of upcoming workshop
-* react-scripts
-* the starter page
-* the goodies (code-splitting, service workers, PWAs, deployment, etc...)
-  * Probably not much detail here. List and where to find in docs?
-* Ejecting
-  * When to eject and when to not eject?
+<List>
+  <Appear>
+    <ListItem>Create React apps with no build configuration.</ListItem>
+    <ListItem>the de-facto starter for the react community</ListItem>
+    <ListItem><InlineCode>> npx create-react-app my-app</InlineCode></ListItem>
+    <ListItem>
+      Includes:
+      <List>
+        <ListItem>Webpack with config</ListItem>
+        <ListItem>Babel</ListItem>
+        <ListItem>ESLint</ListItem>
+        <ListItem>Jest</ListItem>
+        <ListItem>Webpack Dev Server</ListItem>
+      </List>
+    </ListItem>
+  </Appear>
+</List>
+
+---
+
+![npx create-react-app my-app](./assets/create-react-app.svg)
+
+---
+
+## Philosophy
+
+<List>
+  <Appear>
+    <ListItem><strong>One Dependency</strong>: There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.<br /><br /></ListItem>
+    <ListItem><strong>No Configuration Required</strong>: You don't need to configure anything. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.<br /><br /></ListItem>
+    <ListItem><strong>No Lock-In</strong>: You can “eject” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up right where you left off.</ListItem>
+  </Appear>
+</List>
+
+---
+
+## Ejecting
+
+This will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them.
+
+You don’t have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature.

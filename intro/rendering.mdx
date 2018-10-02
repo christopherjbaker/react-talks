@@ -1,27 +1,80 @@
-## how rendering works
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
 
-* render function re-run
-  * When props change. Is there anything to say here?
-* react handles diffing + dom updates
-  * Is there anything to say here, other than that it happens?
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem, inlineCode: InlineCode } = components
+
+## How Rendering Works
+
+* render function will re-run when any props change
+  * (this is why inline arrow functions are slower)
+* react handles diffing and dom updates
 
 ---
-<!-- export { Split as default } from 'mdx-deck/layouts' -->
 
-![](react-lifecycle.png)
+## Component Lifecycle
 
-* Lifecycle
-  * (hide advanced like getDerivedStateFromProps an getSnapshotBeforeUpdate()?)
-  * Mount:
-    * constructor()
-    * static getDerivedStateFromProps()
-    * render()
-    * componentDidMount()
-  * Update
-    * static getDerivedStateFromProps()
-    * shouldComponentUpdate()
-    * render()
-    * getSnapshotBeforeUpdate()
-    * componentDidUpdate()
-  * Unmount
-    * componentWillUnmount()
+---
+
+## Mount
+<List>
+  <Appear>
+    <ListItem>
+      <InlineCode>constructor(props)</InlineCode> - component is being created
+    </ListItem>
+    <ListItem>
+      <InlineCode>static getDerivedStateFromProps(nextProps, lastState)</InlineCode>* - return an object to update state based on new props and old state
+    </ListItem>
+    <ListItem>
+      <InlineCode>render()</InlineCode> - return the react elements to render
+    </ListItem>
+    <ListItem>
+      <InlineCode>componentDidMount()</InlineCode> - it has been rendered to the DOM for the first time
+    </ListItem>
+  </Appear>
+</List>
+
+---
+
+## Update
+<List>
+  <Appear>
+    <ListItem>
+      <InlineCode>static getDerivedStateFromProps(nextProps, lastState)</InlineCode>* - return an object to update state based on new props and old state
+    </ListItem>
+    <ListItem>
+      <InlineCode>shouldComponentUpdate(nextProps, nextState)</InlineCode>* - perform manual check on props/state change
+    </ListItem>
+    <ListItem>
+      <InlineCode>render()</InlineCode> - return the react elements to render
+    </ListItem>
+    <ListItem>
+      <InlineCode>getSnapshotBeforeUpdate(prevProps, prevState)</InlineCode>* - capture DOM data before update, to be provided to <InlineCode>componentDidUpdate</InlineCode>
+    </ListItem>
+    <ListItem>
+      <InlineCode>componentDidUpdate(prevProps, prevState, snapshot)</InlineCode> - it has been updated in the DOM
+    </ListItem>
+  </Appear>
+</List>
+
+---
+
+## Unmount
+<List>
+  <Appear>
+    <ListItem>
+      <InlineCode>componentWillUnmount()</InlineCode> - it <strong>will</strong> be removed from the DOM
+    </ListItem>
+  </Appear>
+</List>
+
+---
+
+## Error Handling
+<List>
+  <Appear>
+    <ListItem>
+      <InlineCode>componentDidCatch(error, info)</InlineCode> - an error has occurred in a child component
+    </ListItem>
+  </Appear>
+</List>

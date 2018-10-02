@@ -1,8 +1,46 @@
-## the react way
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
 
-* Abstraction for the DOM
-  * Keep it that way.
-  * Will discuss how and when to step into DOM in advanced talk.
-* “Everything is a component”
-* Many small components. Single responsibility.
-* Composition is key
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem } = components
+
+## What is React?
+
+<List>
+  <Appear>
+    <ListItem>An abstraction for the DOM</ListItem>
+    <ListItem>Declarative views</ListItem>
+    <ListItem>Component-based</ListItem>
+    <ListItem>Learn Once, Write Anywhere</ListItem>
+  </Appear>
+</List>
+
+---
+
+## Note: DOM Abstraction
+
+<List>
+  <Appear>
+    <ListItem>Sometimes you do need to break out of the abstraction</ListItem>
+    <ListItem>Most commonly when integrating with an external DOM library</ListItem>
+    <ListItem>Don't do this unless you have to</ListItem>
+    <ListItem>You can do this with the `ref` props, as you will soon see</ListItem>
+  </Appear>
+</List>
+
+---
+
+<CodeSurfer
+  title="ref prop"
+  notes=""
+  code={require("!raw-loader!./assets/ref.js")}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { lines: [ 14 ], notes: "Provide a function to be called when the ref changes." },
+    { range: [ 2, 10 ], notes: "" },
+    { range: [ 8, 9 ], notes: "You are given the DOMElement instance to do wich as you please." },
+    { range: [ 3, 6 ], notes: "This will also be called when the element is removed." },
+    { range: [ 2, 10 ], notes: "" },
+  ]}
+/>

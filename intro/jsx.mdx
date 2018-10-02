@@ -1,31 +1,42 @@
-import { Notes, Appear } from 'mdx-deck'
+import { Appear } from 'mdx-deck'
 import { CodeSurfer } from 'mdx-deck-code-surfer'
 
 import components from 'mdx-deck/dist/components'
-const { ul: List, li: ListItem } = components
+const { ul: List, li: ListItem, inlineCode: InlineCode } = components
 
-## JSX is like a healthy vegetable that tastes like decadent chocolate cake. You feel guilty, but it’s good for you.
+<blockquote style={{ fontSize: '2em' }}>JSX is like a healthy vegetable that tastes like decadent chocolate cake. You feel guilty, but it’s good for you.</blockquote>
 
 ---
 
-## JSX
+## About JSX
 
 <List>
   <Appear>
     <ListItem>JSX is not HTML</ListItem>
     <ListItem>Don't underestimate nice looking, simple JSX</ListItem>
-    <ListItem>a bit about props</ListItem>
+    <ListItem>JSX represents objects, called "react elements"</ListItem>
+    <ListItem>It is transpiled to plain javascript at build time</ListItem>
   </Appear>
 </List>
 
-<Notes>
-  few minor differences:
-  <ul>
-    <li>className</li>
-    <li>htmlFor</li>
-    <li>event listeners are cheap</li>
-  </ul>
-</Notes>
+```notes
+  Instead of artificially separating technologies by putting markup and logic in separate files, React separates concerns with loosely coupled units called “components” that contain both.
+```
+
+---
+
+## Differences from HTML
+
+<List>
+  <Appear>
+    <ListItem>*all* tags must close</ListItem>
+    <ListItem><InlineCode>className</InlineCode> instead of <InlineCode>class</InlineCode></ListItem>
+    <ListItem><InlineCode>htmlFor</InlineCode> instead of <InlineCode>for</InlineCode></ListItem>
+    <ListItem><InlineCode>style</InlineCode> expects an object with camelCase</ListItem>
+    <ListItem>ex: <InlineCode>{"<div style={{ backgroundColor: '#cb3036' }} />"}</InlineCode></ListItem>
+    <ListItem>event listeners are cheap</ListItem>
+  </Appear>
+</List>
 
 ---
 
@@ -40,17 +51,7 @@ const { ul: List, li: ListItem } = components
 ---
 
 <CodeSurfer
-  title="Simple JSX - Transpiled"
-  notes=""
-  code={require("!raw-loader!./assets/simple-transpiled.js")}
-  lang="js"
-  dark={true}
-/>
-
----
-
-<CodeSurfer
-  title="JSX"
+  title="JSX with More"
   notes=""
   code={require("!raw-loader!./assets/advanced.js")}
   lang="jsx"
