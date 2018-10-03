@@ -14,6 +14,7 @@ import title from './title.mdx'
 
 export default [
   ...title,
+  ...createReactApp,
   ...react,
   ...jsx,
   ...reactWay,
@@ -22,6 +23,5 @@ export default [
   ...rendering,
   ...setState,
   ...forms,
-  ...createReactApp,
   ...questions,
 ];
