@@ -1,20 +1,15 @@
 class UncontrolledContactForm extends Component {
-  state = {
-    name: '',
-    email: '',
-    message: '',
-  }
+  constructor(props) {
+    super(props);
 
-  // not strictly necessary if you don't need to allow initial values
-  componentDidMount() {
-    const { name, email, message } = this.state;
-    const { initialName, initialEmail, initialMessage } = this.props;
+    // not strictly necessary if you don't need to allow initial values
+    const { initialName, initialEmail, initialMessage } = props;
 
-    return this.setState({
-      name: initialName || name,
-      email: initialEmail || email,
-      message: initialMessage || message,
-    });
+    this.state = {
+      name: initialName || '',
+      email: initialEmail || '',
+      message: initialMessage || '',
+    };
   }
 
   // possibly some initial validation
@@ -28,7 +23,7 @@ class UncontrolledContactForm extends Component {
 
     // final validation
 
-    return onSubmit({ name, email, message })
+    return onSubmit({ name, email, message });
   }
 
   render() {

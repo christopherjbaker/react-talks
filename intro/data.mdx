@@ -6,26 +6,27 @@ const { ul: List, li: ListItem } = components
 
 ## Data Down, Actions Up
 
-<List>
-  <Appear>
-    <ListItem>React does not have bindings</ListItem>
-    <ListItem>Props are passed down to children</ListItem>
-    <ListItem>Children call functions to pass data up to parents</ListItem>
-  </Appear>
-</List>
-
 ---
 
-## Note: inline function creation
-* Creating function inside the render should be avoided if possible
-  * Increases memory usage
-  * Causes extraneous renders
+<CodeSurfer
+  title="DDAU"
+  notes=""
+  code={require("!raw-loader!./assets/ddau.js")}
+  lang="jsx"
+  dark={true}
+/>
+
+```notes
+* React does not have bindings
+* Props are passed down to children
+* Children call functions to pass data up to parents
+```
 
 ---
 
 <CodeSurfer
-  title="with Inline Functions"
-  notes=""
+  title="Note: Inline Functions"
+  notes="Creating function inside the render should be avoided if possible"
   code={require("!raw-loader!./assets/inline-functions-bad.js")}
   lang="jsx"
   dark={true}
@@ -33,6 +34,11 @@ const { ul: List, li: ListItem } = components
     { lines: [ 4, 6 ], notes: "Creates both of these functions new every render." },
   ]}
 />
+
+```notes
+* Increases memory usage
+* Causes extraneous renders
+```
 
 ---
 

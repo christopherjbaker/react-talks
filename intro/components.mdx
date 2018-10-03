@@ -9,50 +9,36 @@ const { ul: List, li: ListItem, a: Link, inlineCode: InlineCode } = components
 <List>
   <Appear>
     <ListItem>Didn't we already say this?</ListItem>
-    <ListItem>XD</ListItem>
   </Appear>
 </List>
 
 ---
 
-<List>
-  <Appear>
-    <ListItem>
-      Don’t be afraid to create too many components
-      <List>
-        <ListItem>separation of concerns</ListItem>
-        <ListItem>increased legibility</ListItem>
-        <ListItem>increased maintainability</ListItem>
-        <ListItem>simplified testing</ListItem>
-      </List>
-    </ListItem>
-    <ListItem>
-      Non-exported render-only functions are A-OK
-      <List>
-        <ListItem>If there are more than a few, put them in their own file</ListItem>
-        <ListItem>(I would have done this on the <Link href="#13">Profile example</Link>)</ListItem>
-      </List>
-    </ListItem>
-  </Appear>
-</List>
+<CodeSurfer
+  title=""
+  notes="Don't be afraid to create too many components"
+  code={require("!raw-loader!./assets/list-best.js")}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 5, 10 ], notes: "Don't be afraid to create too many components" },
+  ]}
+/>
+
+```notes
+* Don’t be afraid to create too many components
+  * separation of concerns
+  * increased legibility
+  * increased maintainability
+  * simplified testing
+* Non-exported render-only functions are A-OK
+  * If there are more than a few, put them in their own file
+  * (I would have done this on the <Link href="#13">Profile example</Link>)
+```
 
 ---
 
-## Prop Types
-
-<List>
-  <Appear>
-    <ListItem>Why? Create a contract for your component.</ListItem>
-    <ListItem>Usually just need simple: <InlineCode>PropTypes.string</InlineCode>, <InlineCode>PropTypes.number</InlineCode>, etc</ListItem>
-    <ListItem>If it is required information, use <InlineCode>.isRequired</InlineCode></ListItem>
-    <ListItem>This lets you skip conditional renders and some tests</ListItem>
-    <ListItem>Can (and should) go deeper with <InlineCode>PropTypes.shape()</InlineCode></ListItem>
-    <ListItem>Can (and often should) get complex with arrayOf, objectOf</ListItem>
-    <ListItem>Note: Be as specific as possible</ListItem>
-    <ListItem>IE: Don’t use <InlineCode>PropTypes.object</InlineCode>, <InlineCode>PropTypes.array</InlineCode>, <InlineCode>PropTypes.any</InlineCode></ListItem>
-    <ListItem>Unless you really don't care</ListItem>
-  </Appear>
-</List>
+## PropTypes
 
 ---
 
@@ -65,52 +51,74 @@ const { ul: List, li: ListItem, a: Link, inlineCode: InlineCode } = components
   steps={[
     { range: [ 1, 7 ], notes: "Static class property with simple types" },
     { range: [ 12, 16 ], notes: "Same result, but without class properties" },
-    { lines: [ 17 ], notes: "node: anything that can be rendered" },
-    { lines: [ 17 ], notes: "note: an array can be rendered, as long as its items can be" },
-    { lines: [ 18 ], notes: "element: a single react element" },
-    { lines: [ 19 ], notes: "oneOf: one of the exact things in the list" },
-    { range: [ 20, 24 ], notes: "oneOfType: any matching type in the list" },
-    { lines: [ 25 ], notes: "arrayOf: list of matching types" },
-    { lines: [ 25 ], notes: "note: list must be provided, but can be empty" },
-    { lines: [ 26 ], notes: "objectOf: object of values with matching types" },
-    { lines: [ 26 ], notes: "note: object must be provided, but can be empty" },
-    { range: [ 27, 30 ], notes: "shape: object with specified keys/values; can be nested" },
+    { range: [ 17, 24 ], notes: "Be Specific" },
+    { range: [ 25, 30 ], notes: "Be Specific" },
     { range: [ 16, 30 ], notes: "" },
   ]}
 />
+
+```notes
+* Why? Create a contract for your component.
+* Usually just need simple: `PropTypes.string`, `PropTypes.number`, etc
+* If it is required information, use `.isRequired`
+* This lets you skip conditional renders and some tests
+
+* Note: Be as specific as possible
+* IE: Don’t use `PropTypes.object`, `PropTypes.array`, `PropTypes.any`
+* Unless you really don't care
+
+* Can (and should) go deeper with `PropTypes.shape()`
+* Can (and often should) get complex with arrayOf, objectOf
+```
 
 ---
 
 ## Component classes<br />vs<br />Render functions
 
-<List>
-  <Appear>
-    <ListItem>Render functions are much simpler and render faster</ListItem>
-    <ListItem>Use them if you can</ListItem>
-    <ListItem>When to use a Component class?</ListItem>
-    <ListItem>If you need to use lifecycle callbacks</ListItem>
-    <ListItem>If you need secondary methods on your component</ListItem>
-    <ListItem>This is usually event handlers, which often call a prop</ListItem>
-  </Appear>
-</List>
+---
+
+<CodeSurfer
+  title="Classes vs Functions"
+  notes=""
+  code={require("!raw-loader!./assets/components-vs-functions.js")}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 1, 5 ], notes: "Render Function" },
+    { range: [ 7, 15 ], notes: "Component Class" },
+  ]}
+/>
+
+```notes
+* Render functions are much simpler and render faster
+* Use them if you can
+* Sometimes called "stateless functional component"
+* When to use a Component class?
+* If you need to use lifecycle callbacks
+* If you need secondary methods on your component
+* event handlers, form validation, etc
+```
 
 ---
 
 ## Component Lifecycle Callbacks<br /><small>(the common ones)</small>
-
-<List>
-  <Appear>
-    <ListItem>
-      <InlineCode>componentDidMount()</InlineCode> - it has been rendered to the DOM for the first time
-    </ListItem>
-    <ListItem>
-      <InlineCode>componentDidUpdate(prevProps, prevState, snapshot)</InlineCode> - it has been updated in the DOM
-  </ListItem>
-    <ListItem>
-      <InlineCode>componentWillUnmount()</InlineCode> - it <strong>will</strong> be removed from the DOM
-    </ListItem>
-    <ListItem>
-      <InlineCode>componentDidCatch(error, info</InlineCode> - an error has occurred in a child component
-    </ListItem>
-  </Appear>
-</List>
+---
+<blockquote style={{ fontSize: '1.4em' }}>
+  <InlineCode>componentDidMount()</InlineCode>
+</blockquote>
+the element has been rendered to the DOM for the first time
+---
+<blockquote style={{ fontSize: '1.4em' }}>
+  <InlineCode>componentDidUpdate(prevProps, prevState)</InlineCode>
+</blockquote>
+the element has been updated in the DOM
+---
+<blockquote style={{ fontSize: '1.4em' }}>
+  <InlineCode>componentWillUnmount()</InlineCode>
+</blockquote>
+the element <strong>will</strong> be removed from the DOM
+---
+<blockquote style={{ fontSize: '1.4em' }}>
+  <InlineCode>componentDidCatch(error, info)</InlineCode>
+</blockquote>
+an error has occurred in the render or lifecycle of a child component

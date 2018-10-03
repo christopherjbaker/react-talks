@@ -12,18 +12,24 @@ const { ul: List, li: ListItem, inlineCode: InlineCode } = components
 
 ---
 
-## Component Lifecycle
+<CodeSurfer
+  title="Component Lifecycle Callbacks"
+  notes=""
+  code={require("!raw-loader!./assets/lifecycle.js")}
+  lang="jsx"
+  dark={true}
+/>
 
 ---
 
-## Mount
+## On Mount
 <List>
   <Appear>
     <ListItem>
       <InlineCode>constructor(props)</InlineCode> - component is being created
     </ListItem>
     <ListItem>
-      <InlineCode>static getDerivedStateFromProps(nextProps, lastState)</InlineCode>* - return an object to update state based on new props and old state
+      <InlineCode>static getDerivedStateFromProps(props)</InlineCode>* - return an object to create state based on props
     </ListItem>
     <ListItem>
       <InlineCode>render()</InlineCode> - return the react elements to render
@@ -36,7 +42,7 @@ const { ul: List, li: ListItem, inlineCode: InlineCode } = components
 
 ---
 
-## Update
+## On Update
 <List>
   <Appear>
     <ListItem>
@@ -49,17 +55,17 @@ const { ul: List, li: ListItem, inlineCode: InlineCode } = components
       <InlineCode>render()</InlineCode> - return the react elements to render
     </ListItem>
     <ListItem>
-      <InlineCode>getSnapshotBeforeUpdate(prevProps, prevState)</InlineCode>* - capture DOM data before update, to be provided to <InlineCode>componentDidUpdate</InlineCode>
+      <InlineCode>getSnapshotBeforeUpdate(props, state)</InlineCode>* - capture DOM data before update, to be provided to <InlineCode>componentDidUpdate</InlineCode>
     </ListItem>
     <ListItem>
-      <InlineCode>componentDidUpdate(prevProps, prevState, snapshot)</InlineCode> - it has been updated in the DOM
+      <InlineCode>componentDidUpdate(props, state, snapshot)</InlineCode> - it has been updated in the DOM
     </ListItem>
   </Appear>
 </List>
 
 ---
 
-## Unmount
+## On Unmount
 <List>
   <Appear>
     <ListItem>

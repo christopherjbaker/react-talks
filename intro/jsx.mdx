@@ -2,7 +2,7 @@ import { Appear } from 'mdx-deck'
 import { CodeSurfer } from 'mdx-deck-code-surfer'
 
 import components from 'mdx-deck/dist/components'
-const { ul: List, li: ListItem, inlineCode: InlineCode } = components
+const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code, pre: Pre } = components
 
 <blockquote style={{ fontSize: '2em' }}>JSX is like a healthy vegetable that tastes like decadent chocolate cake. You feel guilty, but it’s good for you.</blockquote>
 
@@ -18,6 +18,12 @@ const { ul: List, li: ListItem, inlineCode: InlineCode } = components
     <ListItem>It is transpiled to plain javascript at build time</ListItem>
   </Appear>
 </List>
+
+<Code>
+&lt;h1 className="greeting"&gt;
+  Hello, {name}!
+&lt;/h1&gt;
+</Code>
 
 ```notes
   Instead of artificially separating technologies by putting markup and logic in separate files, React separates concerns with loosely coupled units called “components” that contain both.

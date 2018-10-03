@@ -26,6 +26,8 @@ const { ul: List, li: ListItem, a: Link, inlineCode: InlineCode } = components
 
 ---
 
+<blockquote><InlineCode>npx create-react-app my-app</InlineCode></blockquote>
+
 ![npx create-react-app my-app](./assets/create-react-app.svg)
 
 ---
@@ -34,11 +36,17 @@ const { ul: List, li: ListItem, a: Link, inlineCode: InlineCode } = components
 
 <List>
   <Appear>
-    <ListItem><strong>One Dependency</strong>: There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.<br /><br /></ListItem>
-    <ListItem><strong>No Configuration Required</strong>: You don't need to configure anything. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.<br /><br /></ListItem>
-    <ListItem><strong>No Lock-In</strong>: You can “eject” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up right where you left off.</ListItem>
+    <ListItem><strong>One Dependency</strong>: provides a cohesive curated experience<br /><br /></ListItem>
+    <ListItem><strong>No Configuration Required</strong>: so you can focus on writing code<br /><br /></ListItem>
+    <ListItem><strong>No Lock-In</strong>: you can “eject” to a custom setup at any time</ListItem>
   </Appear>
 </List>
+
+```notes
+* One Dependency: There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
+* No Configuration Required: You don't need to configure anything. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
+* No Lock-In: You can “eject” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up right where you left off.
+```
 
 ---
 
@@ -46,4 +54,6 @@ const { ul: List, li: ListItem, a: Link, inlineCode: InlineCode } = components
 
 This will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them.
 
+```notes
 You don’t have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature.
+```
