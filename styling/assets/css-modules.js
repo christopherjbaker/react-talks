@@ -1,4 +1,4 @@
-import styles from './css-modules.css';
+import styles, { css } from './css-modules.css';
 
 function Thing() {
   const { bar } = this.props;
