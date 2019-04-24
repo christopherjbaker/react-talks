@@ -23,7 +23,7 @@ const { ul: List, li: ListItem } = components
 <CodeSurfer
   title="Single Large Component"
   notes=""
-  code={require("!raw-loader!./assets/list-ugly.js")}
+  code={require("!raw-loader!./assets/list-ugly.js").default}
   lang="jsx"
   dark={true}
   steps={[
@@ -36,7 +36,7 @@ const { ul: List, li: ListItem } = components
 <CodeSurfer
   title="Simple Breakdown"
   notes=""
-  code={require("!raw-loader!./assets/list-better.js")}
+  code={require("!raw-loader!./assets/list-better.js").default}
   lang="jsx"
   dark={true}
   steps={[
@@ -50,7 +50,7 @@ const { ul: List, li: ListItem } = components
 <CodeSurfer
   title={`Rewritten "The React Way"`}
   notes=""
-  code={require("!raw-loader!./assets/list-best.js")}
+  code={require("!raw-loader!./assets/list-best.js").default}
   lang="jsx"
   dark={true}
   steps={[
@@ -65,15 +65,3 @@ const { ul: List, li: ListItem } = components
 * Because we  doesn't involve your data, and the component that deals with data doesn't need to change
 * You need only change those secondary render functions
 ```
-
----
-
-## Note: Modlets
-
-<List>
-  <Appear>
-    <ListItem>Modlets and React work extremely well together</ListItem>
-    <ListItem>Every component can be a modlet</ListItem>
-    <ListItem>Not every component needs to be a modlet</ListItem>
-  </Appear>
-</List>

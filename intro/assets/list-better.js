@@ -3,30 +3,30 @@ function Profile({ name, age, phone, github, twitter }) {
     <div>
       <h2 className="profile-name">{name}</h2>
       <ul className="profile-info">
-        <Row>
+        <Item>
           <Label>Age</Label>
           <Value>{age} years</Value>
-        </Row>
-        <Row>
+        </Item>
+        <Item>
           <Label>Phone</Label>
           <Value>{phone}</Value>
-        </Row>
-        <Row>
+        </Item>
+        <Item>
           <Label>
-            <a href={`http://www.github.com/${github}`}>Gitbub</a>
+            <a href={`http://www.github.com/${github}`}>Github</a>
           </Label>
-        </Row>
-        <Row>
+        </Item>
+        <Item>
           <Label>
             <a href={`http://www.twitter.com/${twitter}`}>Twitter</a>
           </Label>
-        </Row>
+        </Item>
       </ul>
     </div>
   );
 };
 
-function Row({ children, ...props }) => (
+function Item({ children, ...props }) => (
   <li {...props} className="profile-row">{children}</li>
 );
 

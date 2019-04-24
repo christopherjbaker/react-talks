@@ -8,6 +8,10 @@ export default {
       textAlign: 'center',
     },
 
+    heading: {
+      textTransform: 'none',
+      fontWeight: 600
+    },
     ul: {
         li: {
             p: {

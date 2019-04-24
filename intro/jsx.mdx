@@ -49,7 +49,7 @@ const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code, pre: Pre } =
 <CodeSurfer
   title="Simple JSX"
   notes=""
-  code={require("!raw-loader!./assets/simple.js")}
+  code={require("!raw-loader!./assets/simple.js").default}
   lang="jsx"
   dark={true}
 />
@@ -59,7 +59,7 @@ const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code, pre: Pre } =
 <CodeSurfer
   title="JSX with More"
   notes=""
-  code={require("!raw-loader!./assets/advanced.js")}
+  code={require("!raw-loader!./assets/advanced.js").default}
   lang="jsx"
   dark={true}
   steps={[

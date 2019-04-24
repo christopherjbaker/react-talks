@@ -14,32 +14,3 @@ const { ul: List, li: ListItem } = components
     <ListItem>Learn Once, Write Anywhere</ListItem>
   </Appear>
 </List>
-
----
-
-## Note: DOM Abstraction
-
-<List>
-  <Appear>
-    <ListItem>Sometimes you do need to break out of the abstraction</ListItem>
-    <ListItem>Most commonly when integrating with an external DOM library</ListItem>
-    <ListItem>Don't do this unless you have to</ListItem>
-  </Appear>
-</List>
-
----
-
-<CodeSurfer
-  title="ref prop"
-  notes=""
-  code={require("!raw-loader!./assets/ref.js")}
-  lang="jsx"
-  dark={true}
-  steps={[
-    { lines: [ 14 ], notes: "Provide a function to be called when the ref changes." },
-    { range: [ 2, 10 ], notes: "" },
-    { range: [ 8, 9 ], notes: "You are given the DOMElement instance to do with as you please." },
-    { range: [ 3, 6 ], notes: "This will also be called when the element is removed." },
-    { range: [ 2, 10 ], notes: "" },
-  ]}
-/>

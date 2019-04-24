@@ -13,7 +13,7 @@ function Profile({ name, age, phone, github, twitter }) {
         </li>
         <li className="profile-row">
           <span className="profile-label">
-            <a href={`http://www.github.com/${github}`}>Gitbub</a>
+            <a href={`http://www.github.com/${github}`}>Github</a>
           </span>
         </li>
         <li className="profile-row">

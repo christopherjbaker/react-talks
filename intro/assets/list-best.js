@@ -5,7 +5,7 @@ function Profile({ name, age, phone, github, twitter }) {
       <Items>
         <Item label="Age" value={`${age} years`} />
         <Item label="Phone" value={phone} />
-        <Item label="Gitbub" href={`http://www.github.com/${github}`} />
+        <Item label="Github" href={`http://www.github.com/${github}`} />
         <Item label="Twitter" href={`http://www.twitter.com/${twitter}`} />
       </Items>
     </div>
