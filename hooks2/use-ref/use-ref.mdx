@@ -1,0 +1,50 @@
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code, pre: Pre } = components
+
+## What is useRef?
+
+<List>
+  <Appear>
+    <ListItem>A data store, just like useState</ListItem>
+    <ListItem>Does not cause rerenders, unlike useState</ListItem>
+    <ListItem>Easily exposes dom elements</ListItem>
+  </Appear>
+</List>
+
+---
+
+<CodeSurfer
+  title="useRef with Form Input"
+  notes=""
+  code={require("!raw-loader!./input.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    {},
+    { lines: [ 4 ], notes: "Get the ref" },
+    { lines: [ 8 ], notes: "Use the current value as needed" },
+    { lines: [ 9 ], notes: "Set the current value (does not trigger update)" },
+    { notes: "This is not the normal use, however." },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="useRef for External Libraries"
+  notes=""
+  code={require("!raw-loader!./el.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    {},
+    { range: [ 4, 5 ], notes: "Get refs for the element and the map instance" },
+    { lines: [ 12 ], notes: "Pass the el ref to the element" },
+    { lines: [ 7, 9 ], notes: "Working inside a useEffect so we have access to el.current" },
+    { lines: [ 8 ], notes: "Set the current map value" },
+    {},
+  ]}
+/>

@@ -1,0 +1,48 @@
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code, pre: Pre } = components
+
+## What is useContext?
+
+<List>
+  <Appear>
+    <ListItem>Exposes data at a high level to be used at a lower level</ListItem>
+    <ListItem>Avoids prop-drilling</ListItem>
+    <ListItem>Creates custom hooks to simplify knowledge</ListItem>
+  </Appear>
+</List>
+
+---
+
+<CodeSurfer
+  title="Theme Provider"
+  notes=""
+  code={require("!raw-loader!./provider.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 3, 22 ], notes: "The data we\'re making available everywhere" },
+    { lines: [ 24 ], notes: "Create the context" },
+    { range: [ 28, 30 ], notes: "Provide the context and the value" },
+    { range: [ 34, 42 ], notes: "Custom hooks to provide the needed values" },
+    { range: [ 24, 42] },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Theme Consumer"
+  notes=""
+  code={require("!raw-loader!./consumer.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 20, 30 ], notes: "The Button Component, using those custom hooks" },
+    { range: [ 6, 9 ], notes: "Use the Button with the Provider" },
+    { range: [ 11, 15 ], notes: "We can also nest providers, only using the inner one" },
+    { range: [ 4, 18 ] },
+  ]}
+/>
