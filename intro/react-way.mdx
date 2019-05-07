@@ -1,0 +1,67 @@
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem } = components
+
+## The React Way
+
+---
+
+## "Everything is a component"
+
+<List>
+  <Appear>
+    <ListItem>Many small components</ListItem>
+    <ListItem>Single responsibility</ListItem>
+    <ListItem>Composition not Inheritance</ListItem>
+  </Appear>
+</List>
+
+---
+
+<CodeSurfer
+  title="Single Large Component"
+  notes=""
+  code={require("!raw-loader!./assets/list-ugly.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 6, 9 ], notes: "lots of repetition/boilerplate" },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Simple Breakdown"
+  notes=""
+  code={require("!raw-loader!./assets/list-better.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 6, 9 ], notes: "Simpler to understand at a glance" },
+    { range: [ 29, 39 ], notes: "Just had to break out a few components" },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title={`Rewritten "The React Way"`}
+  notes=""
+  code={require("!raw-loader!./assets/list-best.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 5, 10 ], notes: "Very direct. Easy to comprehend. Semantically informative." },
+    { range: [ 15, 28 ], notes: "Still just some simple components," },
+    { range: [ 30, 46 ], notes: "With a few conditionals to simplify our logic." },
+  ]}
+/>
+
+```notes
+* This should now be a table instead of a bulleted list
+* Because we  doesn't involve your data, and the component that deals with data doesn't need to change
+* You need only change those secondary render functions
+```

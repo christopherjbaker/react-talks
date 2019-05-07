@@ -1,0 +1,63 @@
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem, a: Link, inlineCode: InlineCode } = components
+
+## create-react-app
+
+<List>
+  <Appear>
+    <ListItem>Create React apps with no build configuration.</ListItem>
+    <ListItem>the de-facto starter for the react community</ListItem>
+    <ListItem><InlineCode>> npx create-react-app my-app</InlineCode></ListItem>
+    <ListItem>
+      Includes:
+      <List>
+        <ListItem>Webpack with config</ListItem>
+        <ListItem>Babel</ListItem>
+        <ListItem>ESLint</ListItem>
+        <ListItem>Jest</ListItem>
+        <ListItem>Webpack Dev Server</ListItem>
+      </List>
+    </ListItem>
+  </Appear>
+</List>
+
+---
+
+<blockquote><InlineCode>npx create-react-app my-app</InlineCode></blockquote>
+
+![npx create-react-app my-app](./assets/create-react-app.svg)
+
+---
+
+## Philosophy
+
+<List>
+  <Appear>
+    <ListItem><strong>One Dependency</strong>: provides a cohesive curated experience<br /><br /></ListItem>
+    <ListItem><strong>No Configuration Required</strong>: so you can focus on writing code<br /><br /></ListItem>
+    <ListItem><strong>No Lock-In</strong>: you can “eject” to a custom setup at any time</ListItem>
+  </Appear>
+</List>
+
+```notes
+* One Dependency: There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
+* No Configuration Required: You don't need to configure anything. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
+* No Lock-In: You can “eject” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up right where you left off.
+```
+
+---
+
+## Ejecting
+
+This will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them.
+
+```notes
+You don’t have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature.
+```
+
+---
+
+# Try it

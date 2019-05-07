@@ -1,0 +1,38 @@
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem, a: Link, inlineCode: InlineCode } = components
+
+## PropTypes
+
+---
+
+<CodeSurfer
+  title="PropTypes"
+  notes=""
+  code={require("!raw-loader!./assets/prop-types.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 1, 7 ], notes: "Static class property with simple types" },
+    { range: [ 12, 16 ], notes: "Same result, but without class properties" },
+    { range: [ 17, 24 ], notes: "Be Specific" },
+    { range: [ 25, 30 ], notes: "Be Specific" },
+    { range: [ 16, 30 ], notes: "" },
+  ]}
+/>
+
+```notes
+* Why? Create a contract for your component.
+* Usually just need simple: `PropTypes.string`, `PropTypes.number`, etc
+* If it is required information, use `.isRequired`
+* This lets you skip conditional renders and some tests
+
+* Note: Be as specific as possible
+* IE: Don’t use `PropTypes.object`, `PropTypes.array`, `PropTypes.any`
+* Unless you really don't care
+
+* Can (and should) go deeper with `PropTypes.shape()`
+* Can (and often should) get complex with arrayOf, objectOf
+```
