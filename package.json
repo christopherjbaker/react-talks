@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "main": "mdx-deck.js",
   "scripts": {
+    "deploy": "gh-pages --add -d dist",
     "build:html": "node mdx-deck.js build:html",
     "build:pdf": "node mdx-deck.js build:pdf",
     "start": "node mdx-deck.js start"
   },
   "dependencies": {
+    "file-loader": "^3.0.1",
     "mdx-deck": "^1.7.1",
     "mdx-deck-code-surfer": "^0.5.5",
     "raw-loader": "^2.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
