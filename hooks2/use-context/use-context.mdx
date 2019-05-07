@@ -10,7 +10,7 @@ const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code, pre: Pre } =
   <Appear>
     <ListItem>Exposes data at a high level to be used at a lower level</ListItem>
     <ListItem>Avoids prop-drilling</ListItem>
-    <ListItem>Creates custom hooks to simplify knowledge</ListItem>
+    <ListItem>Used by custom hooks to simplify knowledge</ListItem>
   </Appear>
 </List>
 
@@ -24,8 +24,34 @@ const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code, pre: Pre } =
   dark={true}
   steps={[
     { range: [ 3, 22 ], notes: "The data we\'re making available everywhere" },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Theme Consumer"
+  notes=""
+  code={require("!raw-loader!./consumer.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 6, 9 ], notes: "Use the Button with the Provider" },
+    { range: [ 20, 30 ], notes: "The Button Component, using those custom hooks" },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Theme Provider"
+  notes=""
+  code={require("!raw-loader!./provider.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 26, 32 ], notes: "ThemeProvider" },
     { lines: [ 24 ], notes: "Create the context" },
-    { range: [ 28, 30 ], notes: "Provide the context and the value" },
     { range: [ 34, 42 ], notes: "Custom hooks to provide the needed values" },
     { range: [ 24, 42] },
   ]}
@@ -40,9 +66,6 @@ const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code, pre: Pre } =
   lang="jsx"
   dark={true}
   steps={[
-    { range: [ 20, 30 ], notes: "The Button Component, using those custom hooks" },
-    { range: [ 6, 9 ], notes: "Use the Button with the Provider" },
-    { range: [ 11, 15 ], notes: "We can also nest providers, only using the inner one" },
     { range: [ 4, 18 ] },
   ]}
 />

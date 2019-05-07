@@ -6,7 +6,7 @@ function Hello() {
 
   useEffect(() => {
     map.current = new google.maps.Map(el.current, {});
-  });
+  }, []);
 
   return (
     <div ref={el} />

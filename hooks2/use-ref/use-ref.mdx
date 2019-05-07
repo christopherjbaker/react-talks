@@ -11,6 +11,7 @@ const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code, pre: Pre } =
     <ListItem>A data store, just like useState</ListItem>
     <ListItem>Does not cause rerenders, unlike useState</ListItem>
     <ListItem>Easily exposes dom elements</ListItem>
+    <ListItem>Has a single property "current"</ListItem>
   </Appear>
 </List>
 
@@ -43,7 +44,7 @@ const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code, pre: Pre } =
     {},
     { range: [ 4, 5 ], notes: "Get refs for the element and the map instance" },
     { lines: [ 12 ], notes: "Pass the el ref to the element" },
-    { lines: [ 7, 9 ], notes: "Working inside a useEffect so we have access to el.current" },
+    { lines: [ 7, 9 ], notes: "Working inside a useEffect so we have access to el.current EXPAND" },
     { lines: [ 8 ], notes: "Set the current map value" },
     {},
   ]}
