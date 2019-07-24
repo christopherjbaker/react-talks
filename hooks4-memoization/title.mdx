@@ -9,13 +9,13 @@ const { ul: List, li: ListItem, inlineCode: InlineCode } = components
 <img src={require('./assets/react.svg')} width="400" />
 
 # React Hooks Part 4
-## Memoization for Fun and ~Profit~ Performance
+## Memoization for Fun and ~~Profit~~ Performance
 
 ---
 
 # What is Memoization
 
-In computing, memoization is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again.
+In computing, memoization is an **optimization technique** used primarily to speed up computer programs by storing the results of **expensive function calls** and returning the cached result when the same inputs occur again.
 
 &mdash; [Wikipedia](https://en.wikipedia.org/wiki/Memoization)
 
@@ -31,7 +31,7 @@ In computing, memoization is an optimization technique used primarily to speed u
 
 <List>
   <Appear>
-    <ListItem><strong>Strictly for Optimization</strong>: your code should work without these too</ListItem>
+    <ListItem><strong>Strictly for Optimization</strong>: Your code should work without these, too</ListItem>
     <ListItem><InlineCode>useMemo</InlineCode>: Use to cache expensive calculations</ListItem>
     <ListItem><InlineCode>useCallback</InlineCode>: Use to maintain referencial equality between renders</ListItem>
   </Appear>

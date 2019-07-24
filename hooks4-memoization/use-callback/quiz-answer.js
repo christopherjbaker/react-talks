@@ -24,6 +24,10 @@ function Hello1() {
   );
 };
 
+const Thing = React.memo(({ onClick }) => {
+  return <div onClick={onClick}>Hello</div>;
+});
+
 function Hello3() {
   const handleClick = useCallback(() => { /* do stuff */ }, []);
 
