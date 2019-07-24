@@ -1,0 +1,29 @@
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+<CodeSurfer
+  title="useMemo"
+  code={require("!raw-loader!./example.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 5, 6 ], notes: "We need to do something expensive" },
+    { range: [ 4, 6 ], notes: "So we wrap it in useMemo" },
+    { lines: [ 7 ], notes: "We specify when it should re-compute" },
+    { notes: "Not a particularly real-world use-case though" },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Displaying a JSON Object"
+  code={require("!raw-loader!./example-real.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 14, 25 ], notes: "This could get quite expensive for a large object" },
+    { range: [ 5, 6 ], notes: "Even the parsing could make a difference" },
+    { range: [ 4, 7 ], notes: "So we memoize the whole value, only recalculating on bigJSONBlob changes" },
+    { range: [ 3, 12 ] },
+  ]}
+/>

@@ -1,0 +1,69 @@
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+# useCallback
+
+## First: Pure Components
+
+Pure components only re-render when their props change.
+
+---
+
+<CodeSurfer
+  code={require("!raw-loader!./pure.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 3, 7 ], notes: "Pure Class Component (with React.PureComponent)" },
+    { range: [ 9, 11 ], notes: "Pure Function Component (with React.memo)" },
+    { notes: "Note: prop comparison is shallow." },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="useCallback"
+  code={require("!raw-loader!./example.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { notes: "(here, we assume Thing is a pure component)" },
+    { range: [ 4, 6 ], notes: "Click handler gets memoized" },
+    { lines: [ 9 ], notes: "Thing gets the same function" },
+    { notes: "referencial equality has been maintained" },
+  ]}
+/>
+
+---
+
+# Pop Quiz
+
+---
+
+<CodeSurfer
+  title="Pop Quiz"
+  code={require("!raw-loader!./quiz.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 3, 9 ], notes: "a click handler" },
+    { range: [ 11, 17 ], notes: "a memoized click handler" },
+    { notes: "Which is more performant?" },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Pop Quiz Explanation"
+  code={require("!raw-loader!./quiz-answer.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 3, 9 ], notes: "the memoized click handler" },
+    { range: [ 11, 17 ], notes: "the memoized click handler, rewritten" },
+    { range: [ 19, 25 ], notes: "which is almost the same as the original" },
+    { range: [ 11, 25 ], notes: "Now: which is more performant?" },
+    { range: [ 27, 33 ], notes: "This is only better if the child component depends on referencial identity" },
+  ]}
+/>

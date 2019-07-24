@@ -1,0 +1,38 @@
+import { Head, Appear } from 'mdx-deck'
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem, inlineCode: InlineCode } = components
+
+<Head>
+  <title>Hooks 4: Memoization for Fun and ~Profit~ Performance</title>
+</Head>
+
+<img src={require('./assets/react.svg')} width="400" />
+
+# React Hooks Part 4
+## Memoization for Fun and ~Profit~ Performance
+
+---
+
+# What is Memoization
+
+In computing, memoization is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again.
+
+&mdash; [Wikipedia](https://en.wikipedia.org/wiki/Memoization)
+
+---
+
+# 1. Make it Work
+# 2. Make it Right
+# 3. Make it Fast
+
+---
+
+# Memoization in React
+
+<List>
+  <Appear>
+    <ListItem><strong>Strictly for Optimization</strong>: your code should work without these too</ListItem>
+    <ListItem><InlineCode>useMemo</InlineCode>: Use to cache expensive calculations</ListItem>
+    <ListItem><InlineCode>useCallback</InlineCode>: Use to maintain referencial equality between renders</ListItem>
+  </Appear>
+</List>
