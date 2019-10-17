@@ -1,0 +1,45 @@
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code, pre: Pre } = components
+
+## Data Fetching with `Suspense`
+
+<List>
+  <Appear>
+    <ListItem>Short explanation: Throw a promise during your render.</ListItem>
+    <ListItem>Caveat: This API will likely change in a future React release.</ListItem>
+  </Appear>
+</List>
+
+---
+
+<CodeSurfer
+  title="Data Fetching with Suspense"
+  notes=""
+  code={require("!raw-loader!./app.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 1, 10 ], notes: "The use of Suspense is pretty much the same." },
+    { range: [ 12, 16 ], notes: "Our inner component is standard, too." },
+    { range: [ 18, 22 ], notes: "We will be fetching data in a pretty standard way." },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="The Magic of Suspense"
+  notes=""
+  code={require("!raw-loader!./use-async-data.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 1, 15 ], notes: "The custom hook to work with Suspense." },
+    { range: [ 4, 8 ], notes: "Only running the fetch once and caching between renders." },
+    { range: [ 10, 12 ], notes: "The real magic: throw a promise. (Caveat)" },
+    { range: [ 1, 15 ], notes: "The custom hook to work with Suspense." },
+  ]}
+/>

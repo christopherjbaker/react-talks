@@ -1,0 +1,33 @@
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code, pre: Pre } = components
+
+## Code Splitting with `React.lazy` and `Suspense`
+
+<List>
+  <Appear>
+    <ListItem>Don't load your whole app up-front.</ListItem>
+    <ListItem>Load your components on demand, when they're needed.</ListItem>
+    <ListItem>Can significantly reduce initial load time.</ListItem>
+  </Appear>
+</List>
+
+---
+
+<CodeSurfer
+  title="Suspense with React.lazy"
+  notes=""
+  code={require("!raw-loader!./app.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    {},
+    { tokens: { 1: [ 12, 13, 14, 15 ] }, notes: "Must use dynamic `import` to get the component." },
+    { range: [ 5, 10 ], notes: "Suspense works just like any other React component." },
+    { lines: [ 1 ], notes: "Except that LazyComponent doesn't exist (yet)." },
+    { tokens: { 7: [ 7, 8, 9, 10, 11, 12, 13, 14 ] }, notes: "In the mean time, it will show the loading message." },
+    {},
+  ]}
+/>

@@ -4,8 +4,7 @@
   "main": "mdx-deck.js",
   "scripts": {
     "deploy": "gh-pages --add -d dist",
-    "build:html": "node mdx-deck.js build:html",
-    "build:pdf": "node mdx-deck.js build:pdf",
+    "build": "node mdx-deck.js build:html",
     "start": "node mdx-deck.js start"
   },
   "dependencies": {
