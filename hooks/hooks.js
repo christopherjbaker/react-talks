@@ -5,13 +5,14 @@ import resources from './resources.mdx'
 import title from './title.mdx'
 
 import code from './code/code.mdx'
-import fakeout from './fakeout/fakeout.mdx'
+import fakeoutIntro from './fakeout/intro.mdx'
+import fakeoutOutro from './fakeout/outro.mdx'
 import how from './how/how.mdx'
 import what from './what/what.mdx'
 import why from './why/why.mdx'
 
 export default [
-  ...fakeout,
+  ...fakeoutIntro,
   ...title,
   ...what,
   ...why,
@@ -19,4 +20,5 @@ export default [
   ...code,
   ...resources,
   ...questions,
+  ...fakeoutOutro,
 ];

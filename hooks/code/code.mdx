@@ -1,6 +1,7 @@
 import { CodeSurfer } from 'mdx-deck-code-surfer'
 
 # Live Coding!
+## Except not really, since you're looking at this after the fact. We'll just review the code here instead.
 
 ---
 
@@ -35,7 +36,11 @@ import { CodeSurfer } from 'mdx-deck-code-surfer'
     { range: [  4,  5 ], notes: "We are creating a Product component (with a productId prop), with a product state." },
     { range: [  8, 13 ], notes: "We will need to fetch the product, lock it, and set it." },
     { range: [ 16, 19 ], notes: "Later, we will need to unlock the product." },
-    { lines: [ 7, 21 ], notes: "We do this whenever the productId prop changes." },
+    { lines: [  7, 21 ], notes: "We do this whenever the productId prop changes." },
     { range: [  1, 30 ] },
+    { range: [ 33, 49 ], notes: "But what if we want to share this logic between components?" },
+    { lines: [ 32, 51, 52 ], notes: "Just put it into a new function, a custom hook, retuning the data we need outside." },
+    { range: [ 54, 63 ], notes: "Then we call it to get the needed value and treat it as before." },
+    { range: [ 32, 63 ] },
   ]}
 />
