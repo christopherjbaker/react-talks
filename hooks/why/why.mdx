@@ -1,0 +1,14 @@
+import { Appear } from 'mdx-deck'
+
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code, pre: Pre } = components
+
+# Why are hooks better?
+
+<List>
+  <Appear>
+    <ListItem>They allow you to co-locate all logic relating to a specific feature. No more splitting it between multiple lifecycle methods or duplicating logic.</ListItem>
+    <ListItem>Simpler, cleaner, and more easily sharable. Creating <em>custom hooks</em> is just a matter of moving your code to a new function.</ListItem>
+    <ListItem>Get the benefits of higher order components but with simple functions and without clogging up your React tree.</ListItem>
+  </Appear>
+</List>

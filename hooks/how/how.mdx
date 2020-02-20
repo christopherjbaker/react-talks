@@ -1,0 +1,36 @@
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+# How are hooks different?
+
+---
+
+<CodeSurfer
+  title="Class Component"
+  notes=""
+  code={require("!raw-loader!./assets/timer-class.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [ 1, 22 ] },
+    { lines: [ 3, 7, 8, 12 ], notes: "The relevant code is spread out over multiple places." },
+    { range: [ 24, 52 ], notes: "Multiple states make even more mess." },
+    { lines: [ 26, 27, 31, 32, 33, 34, 38, 39 ], notes: "The relevant code is more spread out." },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Function Component with Hooks"
+  notes=""
+  code={require("!raw-loader!./assets/timer-hooks.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [  1, 13 ] },
+    { range: [  2,  8 ], notes: "The relevant code is co-located..." },
+    { range: [ 15, 25 ], notes: "easy to make reusable..." },
+    { range: [ 27, 33 ], notes: "to use..." },
+    { range: [ 35, 45 ], notes: "and to use again..." },
+  ]}
+/>

@@ -1,0 +1,41 @@
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+
+# Live Coding!
+
+---
+
+<CodeSurfer
+  title="Class Component"
+  notes=""
+  code={require("!raw-loader!./assets/product-class.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [  1, 43 ] },
+    { range: [  4,  7 ], notes: "We are creating a Product component, with a product state." },
+    { range: [  9, 13 ], notes: "On mount, fetch the product, lock it, and save it to state." },
+    { range: [ 15, 19 ], notes: "On unmount, unlock the product." },
+    { lines: [ 21, 22, 31, 32 ], notes: "On updates, if the productId is different than the old productId..." },
+    { range: [ 23, 26 ], notes: "If there is an old product, unlock it, and clear the state." },
+    { range: [ 28, 30 ], notes: "Then fetch the new product, lock it, and save it to state." },
+    { range: [  1, 43 ] },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Function Component with Hooks"
+  notes=""
+  code={require("!raw-loader!./assets/product-hooks.js").default}
+  lang="jsx"
+  dark={true}
+  steps={[
+    { range: [  1, 30 ] },
+    { range: [  4,  5 ], notes: "We are creating a Product component (with a productId prop), with a product state." },
+    { range: [  8, 13 ], notes: "We will need to fetch the product, lock it, and set it." },
+    { range: [ 16, 19 ], notes: "Later, we will need to unlock the product." },
+    { lines: [ 7, 21 ], notes: "We do this whenever the productId prop changes." },
+    { range: [  1, 30 ] },
+  ]}
+/>

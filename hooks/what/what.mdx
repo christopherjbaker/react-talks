@@ -1,0 +1,42 @@
+import { Appear } from 'mdx-deck'
+
+import components from 'mdx-deck/dist/components'
+const { ul: List, li: ListItem, inlineCode: InlineCode, code: Code } = components
+
+# What are hooks?
+
+<List>
+  <Appear>
+    <ListItem><em>Short answer:</em> They let you use state and other React features with a function.</ListItem>
+    <ListItem><em>Long answer:</em> They provide a new paradigm to approach stateful ideas in an otherwise stateless function.</ListItem>
+  </Appear>
+</List>
+
+---
+
+### _Important:_ Not just an alternative to lifecycles.
+# **Think about data synchronization.**
+## Not just a new tool, a whole new toolbox!
+
+---
+
+## Basic Hooks
+<List>
+  <Appear>
+    <ListItem><strong>useState:</strong> Returns a stateful value, and a function to update it.</ListItem>
+    <ListItem><strong>useEffect:</strong> Accepts a function that contains imperative, possibly effectful code.</ListItem>
+    <ListItem><strong>useContext:</strong> Accepts a context object and returns the current context value for that context.</ListItem>
+  </Appear>
+</List>
+
+---
+
+## Additional Hooks
+<List>
+  <Appear>
+    <ListItem><strong>useRef:</strong> Returns a mutable ref object that will persist for the full lifetime of the component.</ListItem>
+    <ListItem><strong>useMemo:</strong> Returns a memoized value.</ListItem>
+    <ListItem><strong>useCallback:</strong> Returns a memoized callback function. Special case of useMemo.</ListItem>
+    <ListItem><strong>useReducer:</strong> An alternative to useState. Returns the current state paired with a dispatch method.</ListItem>
+  </Appear>
+</List>
