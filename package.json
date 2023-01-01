@@ -8,10 +8,10 @@
     "start": "node mdx-deck.js start"
   },
   "dependencies": {
-    "file-loader": "^5.0.2",
-    "mdx-deck": "^1.10.2",
+    "file-loader": "^6.2.0",
+    "mdx-deck": "^4.1.1",
     "mdx-deck-code-surfer": "^0.5.5",
-    "raw-loader": "^4.0.0"
+    "raw-loader": "^4.0.2"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0"
